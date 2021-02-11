@@ -2,13 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PQ4QHRC');</script>
+  <!-- End Google Tag Manager -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
-  <h1>Hello GTM /</h1>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ4QHRC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <h1>Hello GTM</h1>
   <p><a href="/">/</a></p>
   <p><a href="/page.html">/page.html</a></p>
+
+  <form action="/">
+    <p>
+      You can set custom dimension and user id.<br>
+      ex.) /?uid=uid&cd1=cd1&cd2=cd2&cd3=cd3&cd4=cd4&cd5=cd5
+    </p>
+    <div>
+      <label for="uid">uid (User Id)</label>
+      <input type="text" name="uid" id="uid">
+    </div>
+    <div>
+      <label for="cd1">cd1 (Custom Dimension 1)</label>
+      <input type="text" name="cd1" id="cd1">
+    </div>
+    <div>
+      <label for="cd2">cd2 (Custom Dimension 2)</label>
+      <input type="text" name="cd2" id="cd2">
+    </div>
+    <div>
+      <label for="cd3">cd3 (Custom Dimension 3)</label>
+      <input type="text" name="cd3" id="cd3">
+    </div>
+    <div>
+      <label for="cd4">cd4 (Custom Dimension 4)</label>
+      <input type="text" name="cd4" id="cd4">
+    </div>
+    <div>
+      <label for="cd5">cd5 (Custom Dimension 5)</label>
+      <input type="text" name="cd5" id="cd5">
+    </div>
+    <input type="submit">
+  </form>
+  <script>
+    var queryString = window.location.search;
+    var params = new URLSearchParams(queryString.substring(1));
+    ['uid', 'cd1', 'cd2', 'cd3', 'cd4', 'cd5'].forEach(key => {
+      document.getElementById(key).value = params.get(key)
+    });
+  </script>
 </body>
 </html>
